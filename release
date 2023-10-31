@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+cargo bump $1
+# Force Cargo.lock to be updated as well
+cargo check
+
+git cliff --tag $1 -o CHANGELOG.md
+
+git add .
+git commit -m "Release $1"
+git tag -s $1 -m "Version $1"
+
+echo "Done. If the created commit looks good, git push --follow-tags to finish."

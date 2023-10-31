@@ -4,12 +4,10 @@ CLI tools for working with GraphQL.
 
 ## Release
 
-Once all changes are made:
+Make sure to have the necessary tools installed with
+`cargo install git-cliff cargo-bump --locked`.
 
-- Bump version in Cargo.toml
-- Generate changelog with `git cliff --tag 0.2.0 -o CHANGELOG.md`
-- Tag release with `git tag -as 0.2.0`
-- Push with `git push --follow-tag`
+Then simply run `./release <VERSION>`.
 
 ## License
 
