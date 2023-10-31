@@ -2,6 +2,15 @@
 
 CLI tools for working with GraphQL.
 
+## Release
+
+Once all changes are made:
+
+- Bump version in Cargo.toml
+- Generate changelog with `git cliff --tag 0.2.0 -o CHANGELOG.md`
+- Tag release with `git tag -as 0.2.0`
+- Push with `git push --follow-tag`
+
 ## License
 
 Licensed under either of
