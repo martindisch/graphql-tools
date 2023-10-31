@@ -7,6 +7,10 @@ description = "CLI tools for working with GraphQL"
 repository = "https://github.com/martindisch/graphql-tools"
 license = "MIT OR Apache-2.0"
 
+[[bin]]
+name = "graphql"
+path = "src/main.rs"
+
 [dependencies]
 clap = { version = "4.4.7", features = ["derive"] }
 
