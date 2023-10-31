@@ -12,6 +12,7 @@ name = "graphql"
 path = "src/main.rs"
 
 [dependencies]
+base64 = "0.21.5"
 clap = { version = "4.4.7", features = ["derive"] }
 
 # The profile that 'cargo dist' will build with
