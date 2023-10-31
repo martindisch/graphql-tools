@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.0] - 2023-10-31
+
+### Features
+
+- Add musl target ([c1a746a](https://github.com/martindisch/graphql-tools/commit/c1a746a27cc77853e07e09392425ae8d984c9226))
+
 ## [0.2.1] - 2023-10-31
 
 ### Features
