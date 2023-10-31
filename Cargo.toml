@@ -8,3 +8,4 @@ repository = "https://github.com/martindisch/graphql-tools"
 license = "MIT OR Apache-2.0"
 
 [dependencies]
+clap = { version = "4.4.7", features = ["derive"] }
