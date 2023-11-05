@@ -2,6 +2,7 @@
 The MIT License
 
 applies to:
+- arboard, Copyright (c) 2022 The Arboard contributors
 - base64, Copyright (c) 2015 Alice Maz
 - clap, Copyright (c) Individual contributors
 - eyre
@@ -28,6 +29,7 @@ SOFTWARE.
 The Apache License
 
 applies to:
+- arboard
 - base64
 - clap
 - eyre

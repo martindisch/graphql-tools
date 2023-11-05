@@ -1,5 +1,6 @@
 use std::{fmt::Display, str};
 
+use arboard::Clipboard;
 use base64::{engine::general_purpose, Engine};
 use clap::{Parser, Subcommand, ValueEnum};
 use eyre::{eyre, Context, Result};
@@ -9,12 +10,12 @@ use eyre::{eyre, Context, Result};
 
 fn main() -> Result<()> {
     let cli = Cli::parse();
+    let mut clipboard = Clipboard::new()?;
     match cli.command {
         Commands::Encode { name, id, id_type } => {
-            println!(
-                "{}",
-                general_purpose::STANDARD_NO_PAD.encode(format!("{name}\n{id_type}{id}"))
-            )
+            let id = general_purpose::STANDARD_NO_PAD.encode(format!("{name}\n{id_type}{id}"));
+            clipboard.set_text(&id)?;
+            println!("{id}",)
         }
         Commands::Decode { id } => {
             let id_bytes = general_purpose::STANDARD_NO_PAD
@@ -24,6 +25,7 @@ fn main() -> Result<()> {
 
             match id_string.split_once('\n') {
                 Some((name, type_and_id)) if type_and_id.len() >= 2 => {
+                    clipboard.set_text(&type_and_id[1..])?;
                     println!("{name} {} {}", &type_and_id[..1], &type_and_id[1..])
                 }
                 _ => Err(eyre!("Input is not a valid GID"))?,
