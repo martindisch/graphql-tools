@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.0] - 2023-11-05
+
+### Features
+
+- Add type option ([4255369](https://github.com/martindisch/graphql-tools/commit/425536976eb538bc57290c32b0e883cf03d62045))
+- Implement decode command ([84ac1e4](https://github.com/martindisch/graphql-tools/commit/84ac1e47fd4bea670a1e400557c38a8dfa4c5b5d))
+
 ## [0.3.0] - 2023-10-31
 
 ### Features
