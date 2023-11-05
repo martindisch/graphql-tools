@@ -13,12 +13,12 @@ fn main() -> Result<()> {
     let mut clipboard = Clipboard::new()?;
     match cli.command {
         Commands::Encode { name, id, id_type } => {
-            let id = general_purpose::STANDARD_NO_PAD.encode(format!("{name}\n{id_type}{id}"));
+            let id = general_purpose::STANDARD.encode(format!("{name}\n{id_type}{id}"));
             clipboard.set_text(&id)?;
             println!("{id}",)
         }
         Commands::Decode { id } => {
-            let id_bytes = general_purpose::STANDARD_NO_PAD
+            let id_bytes = general_purpose::STANDARD
                 .decode(id)
                 .wrap_err("Input is not valid base64")?;
             let id_string = str::from_utf8(&id_bytes).wrap_err("Input is not valid UTF-8")?;
