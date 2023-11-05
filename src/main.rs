@@ -45,19 +45,19 @@ struct Cli {
 
 #[derive(Subcommand)]
 enum Commands {
-    /// Encode an ID.
+    /// Encode an ID to a base64 GID and copy it to the clipboard.
     Encode {
-        /// The name of the type.
+        /// Name of the type, e.g. Product.
         name: String,
-        /// The ID.
+        /// ID you want to encode, e.g. 1234.
         id: u32,
-        /// The data type.
+        /// Underlying type of the ID.
         #[arg(short = 't', long = "type", default_value_t = Type::I, value_enum)]
         id_type: Type,
     },
-    /// Decode an ID.
+    /// Decode a base64 GID and copy it to the clipboard.
     Decode {
-        /// The ID.
+        /// ID you want to decode, e.g. UHJvZHVjdAppMTIzNA==.
         id: String,
     },
 }
