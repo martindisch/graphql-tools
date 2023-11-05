@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.5.0] - 2023-11-05
+
+### Features
+
+- Copy results to clipboard ([1459751](https://github.com/martindisch/graphql-tools/commit/14597510a1e23f5173b42eba2414fe6df60ac4d6))
+
 ## [0.4.0] - 2023-11-05
 
 ### Features
