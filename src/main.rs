@@ -25,8 +25,10 @@ fn main() -> Result<()> {
 
             match id_string.split_once('\n') {
                 Some((name, type_and_id)) if type_and_id.len() >= 2 => {
-                    clipboard.set_text(&type_and_id[1..])?;
-                    println!("{name} {} {}", &type_and_id[..1], &type_and_id[1..])
+                    let id_type = &type_and_id[..1];
+                    let id = &type_and_id[1..];
+                    clipboard.set_text(id)?;
+                    println!("{name} {id} ({id_type})")
                 }
                 _ => Err(eyre!("Input is not a valid GID"))?,
             }
