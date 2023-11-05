@@ -4,6 +4,7 @@ The MIT License
 applies to:
 - base64, Copyright (c) 2015 Alice Maz
 - clap, Copyright (c) Individual contributors
+- eyre
 -------------------------------------------------------------------------------
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -29,6 +30,7 @@ The Apache License
 applies to:
 - base64
 - clap
+- eyre
 -------------------------------------------------------------------------------
                                  Apache License
                            Version 2.0, January 2004

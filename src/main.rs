@@ -1,12 +1,13 @@
-use std::fmt::Display;
+use std::{fmt::Display, str};
 
 use base64::{engine::general_purpose, Engine};
 use clap::{Parser, Subcommand, ValueEnum};
+use eyre::{eyre, Context, Result};
 
 // Implementation of ID serialization according to
 // https://github.com/ChilliCream/graphql-platform/blob/main/src/HotChocolate/Core/src/Types/Types/Relay/IdSerializer.cs
 
-fn main() {
+fn main() -> Result<()> {
     let cli = Cli::parse();
     match cli.command {
         Commands::Encode { name, id, id_type } => {
@@ -15,7 +16,22 @@ fn main() {
                 general_purpose::STANDARD_NO_PAD.encode(format!("{name}\n{id_type}{id}"))
             )
         }
+        Commands::Decode { id } => {
+            let id_bytes = general_purpose::STANDARD_NO_PAD
+                .decode(id)
+                .wrap_err("Input is not valid base64")?;
+            let id_string = str::from_utf8(&id_bytes).wrap_err("Input is not valid UTF-8")?;
+
+            match id_string.split_once('\n') {
+                Some((name, type_and_id)) if type_and_id.len() >= 2 => {
+                    println!("{name} {} {}", &type_and_id[..1], &type_and_id[1..])
+                }
+                _ => Err(eyre!("Input is not a valid GID"))?,
+            }
+        }
     }
+
+    Ok(())
 }
 
 #[derive(Parser)]
@@ -36,6 +52,11 @@ enum Commands {
         /// The data type.
         #[arg(short = 't', long = "type", default_value_t = Type::I, value_enum)]
         id_type: Type,
+    },
+    /// Decode an ID.
+    Decode {
+        /// The ID.
+        id: String,
     },
 }
 
