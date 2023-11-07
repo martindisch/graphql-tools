@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.0] - 2023-11-07
+
+### Bug Fixes
+
+- Configure engine with padding ([f289690](https://github.com/martindisch/graphql-tools/commit/f2896902da5a9c2a9045707a9ee370dd01f3c42a))
+- Make output formatting consistent ([7dd78ef](https://github.com/martindisch/graphql-tools/commit/7dd78ef1d767238df57bda9a37718d7d03b8918c))
+
+### Documentation
+
+- Use help texts consistent with DG CLI version ([79e11cc](https://github.com/martindisch/graphql-tools/commit/79e11cc2a73f3b9df032c7b81d5b7e90cde73769))
+
 ## [0.5.0] - 2023-11-05
 
 ### Features
