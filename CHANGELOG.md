@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.1] - 2023-11-15
+
+### Bug Fixes
+
+- Allow string IDs ([ddfb31d](https://github.com/martindisch/graphql-tools/commit/ddfb31d98718f58f3a046fbec0017d6c20145381))
+
 ## [0.6.0] - 2023-11-07
 
 ### Bug Fixes
