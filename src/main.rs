@@ -52,7 +52,7 @@ enum Commands {
         /// Name of the type, e.g. Product.
         name: String,
         /// ID you want to encode, e.g. 1234.
-        id: u32,
+        id: String,
         /// Underlying type of the ID.
         #[arg(short = 't', long = "type", default_value_t = Type::I, value_enum)]
         id_type: Type,
