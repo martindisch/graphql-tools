@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.7.0] - 2023-12-11
+
+### Features
+
+- Infer type where possible ([a2552b5](https://github.com/martindisch/graphql-tools/commit/a2552b5d9bfea44f1ec9cb41b5d0252f9edea373))
+
+### Miscellaneous Tasks
+
+- Update installer for more shells ([55f86ac](https://github.com/martindisch/graphql-tools/commit/55f86ace65c542b028e45cfd34eeeeb6fccd1b37))
+
+### Refactor
+
+- Move GID functionality into type ([c1d8bef](https://github.com/martindisch/graphql-tools/commit/c1d8bef00ee2cfa58454446de1ff955fdb303ba4))
+
 ## [0.6.1] - 2023-11-15
 
 ### Bug Fixes
