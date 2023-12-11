@@ -13,6 +13,25 @@ pub struct Gid {
     pub id_type: Type,
 }
 
+impl Gid {
+    pub fn new(name: String, id: String, id_type: Option<Type>) -> Self {
+        let id_type = match id_type {
+            Some(id_type) => id_type,
+            None => {
+                if id.chars().any(|c| !c.is_numeric()) {
+                    Type::S
+                } else if id.parse::<i128>().unwrap() <= i32::MAX.into() {
+                    // This is not great, but it's what we do in the Python implementation
+                    Type::I
+                } else {
+                    Type::L
+                }
+            }
+        };
+        Self { name, id, id_type }
+    }
+}
+
 impl TryFrom<String> for Gid {
     type Error = Report;
 
